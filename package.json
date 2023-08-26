@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@extend-chrome/storage": "^1.5.0",
     "@types/jquery": "^3.5.16",
     "jquery": "^3.7.0",
     "split.js": "^1.6.5",
