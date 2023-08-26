@@ -1,0 +1,30 @@
+// .crx-iframe {
+//   margin-left: 8px;
+//   width: calc(100% - 8px);
+//   height: auto;
+//   border: none;
+//   border-radius: 8px;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+//   background-color: #fff;
+// }
+
+// .pane {
+//   min-width: 0;
+//   max-width: 100%;
+// }
+
+#side_by_side_container{
+  display: grid;
+  // grid-template-columns: 49% 49%;
+  grid-auto-columns: 49.5%;
+  grid-auto-flow: column;
+  column-gap: 10px;
+}
+
+// #side_by_side_src{
+//   width: 50%;
+// }
+
+// #side_by_side_dst{
+//   width: 50%;
+// }

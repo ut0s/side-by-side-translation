@@ -1,0 +1,65 @@
+{
+  "dependencies": {
+    "@types/jquery": "^3.5.16",
+    "jquery": "^3.7.0",
+    "split.js": "^1.6.5",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.18",
+    "@iconify-json/mdi": "^1.1.54",
+    "@tailwindcss/forms": "^0.5.4",
+    "@types/chrome": "^0.0.243",
+    "@types/eslint": "^8.44.2",
+    "@types/eslint-config-prettier": "^6.11.0",
+    "@types/node": "^18.17.3",
+    "@types/prettier": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/compiler-sfc": "^3.3.4",
+    "@vueuse/core": "^10.3.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-vue": "^9.16.1",
+    "postcss": "^8.4.27",
+    "prettier": "^3.0.1",
+    "prettier-plugin-tailwindcss": "^0.4.1",
+    "sass": "^1.64.2",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-icons": "^0.16.5",
+    "unplugin-vue-components": "^0.25.1",
+    "vite": "^4.4.9",
+    "vite-plugin-pages": "^0.31.0",
+    "vue-tsc": "^1.8.8",
+    "webext-bridge": "^6.0.1"
+  },
+  "name": "side-by-side-translation",
+  "overrides": {
+    "@crxjs/vite-plugin": "$@crxjs/vite-plugin"
+  },
+  "pnpm": {
+    "overrides": {},
+    "peerDependencyRules": {
+      "allowAny": [],
+      "allowedDeprecatedVersions": {
+        "sourcemap-codec": "1.4.8"
+      },
+      "allowedVersions": {},
+      "ignoreMissing": []
+    }
+  },
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "lint": "eslint . --fix --ext js,mjs,cjs,ts,mts,cts,vue",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "version": "0.0.1"
+}
