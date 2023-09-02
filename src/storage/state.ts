@@ -1,8 +1,4 @@
-import { getBucket } from "@extend-chrome/storage";
-
-interface State {
+export interface State {
+  tabId: number;
   isEnable: boolean;
 }
-
-const state = getBucket<State>("state");
-export { state }

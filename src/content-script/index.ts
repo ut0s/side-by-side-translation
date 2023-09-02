@@ -1,12 +1,31 @@
-import { state } from "../storage/state";
+import { getBucket } from "@extend-chrome/storage";
 import './index.scss'
 import $ from 'jquery';
+import { State } from "../storage/state";
+import { tabId } from "../storage/tabId";
 
-const _ = await state.get();
-const isEnable = _.isEnable
+console.log("inside content")
 
-if (isEnable) {
-  if (!isSideBySide()) {
+const _ = setInterval(listenerFromBackground, 200);
+
+async function listenerFromBackground() {
+  //get active tab id
+  const _tabId = await tabId.get();
+
+  // check state
+  const state = getBucket<State>(String(_tabId.tabId));
+  const _state = await state.get();
+
+  _state.isEnable ? split() : resetSplit();
+
+  if (import.meta.env.DEV) {
+    console.log("TabId:\t", _tabId.tabId)
+    console.log(_state.isEnable ? "ON" : "OFF")
+  }
+}
+
+function split() {
+  if (!isSplit()) {
     // wrap src document
     // flex-fill
     $("body").children().wrapAll("<div id='side_by_side_src' class='pane' translate='no'></div>")
@@ -17,16 +36,27 @@ if (isEnable) {
     // $("body").children().wrapAll("<div class='d-inline-flex'></div>")
     // $("body").children().wrapAll("<div id='side_by_side_container' class='d-flex flex-row'></div>")
     $("body").children().wrapAll("<div id='side_by_side_container' class=''></div>")
+
+    // TODO set translate=no code tag
   }
-  console.log(isSideBySide())
-} else {
-  // TODO return nomal state
-  if (isSideBySide()) {
-    location.reload()
-  }
-  console.log(isSideBySide())
 }
 
-function isSideBySide() {
-  return $("side_by_side_container").length == 1;
+function resetSplit() {
+  if (isSplit()) {
+    // unrwap container
+    $("#side_by_side_src").unwrap()
+
+    // remove dst pane
+    $("#side_by_side_dst").remove()
+
+    // unwrap src pane
+    $("#side_by_side_src").children().unwrap()
+  }
+}
+
+function isSplit() {
+  if (import.meta.env.DEV) {
+    console.log("Lenght:\t", $("#side_by_side_container").length)
+  }
+  return $("#side_by_side_container").length == 1;
 }
