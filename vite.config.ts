@@ -83,11 +83,11 @@ export default defineConfig({
     },
   ],
   build: {
-    rollupOptions: {
-      input: {
-        iframe: 'src/content-script/iframe/index.html',
-      },
-    },
+    // rollupOptions: {
+    //   input: {
+    //     iframe: 'src/content-script/iframe/index.html',
+    //   },
+    // },
   },
   server: {
     port: 8888,
