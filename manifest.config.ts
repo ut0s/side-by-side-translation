@@ -19,7 +19,14 @@ export default defineManifest(async (env) => ({
   manifest_version: 3,
   description: "extention make additional pane for translation. Check source and translated side-by-side.",
   action: {
+    default_title: 'Trun On Side By Side.',
     // default_popup: 'src/popup/index.html',
+    "default_icon": {
+      // "16": "src/assets/icon_off_16.png",
+      // "32": "src/assets/icon_off_16.png"
+      "64": "src/assets/icon_OFF_64.png",
+      "128": "src/assets/icon_OFF_128.png",
+    },
   },
   background: {
     service_worker: 'src/background/index.ts',
@@ -39,6 +46,10 @@ export default defineManifest(async (env) => ({
     {
       matches: ['*://*/*'],
       resources: ['src/content-script/index.ts'],
+    },
+    {
+      matches: ['*://*/*'],
+      resources: ['src/assets/icon_ON_64.png', 'src/assets/icon_ON_128.png'],
     },
     // {
     //   matches: ['*://*/*'],
