@@ -42,6 +42,17 @@ export default defineManifest(async (env) => ({
   host_permissions: ['*://*/*'],
   // options_page: 'src/options/index.html',
   permissions: ['storage', 'activeTab', 'scripting', 'tabs'],
+  commands: {
+    "toggle_side-by-side": {
+      "suggested_key": {
+        "default": "Ctrl+I",
+        "mac": "Command+I",
+        "chromeos": "Ctrl+I",
+        "linux": "Ctrl+I"
+      },
+      "description": "Toggle \"side-by-side-translation\" on the current page."
+    },
+  },
   web_accessible_resources: [
     {
       matches: ['*://*/*'],

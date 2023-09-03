@@ -2,7 +2,7 @@ import { getBucket } from "@extend-chrome/storage";
 import { State } from "../storage/state";
 import { tabId } from "../storage/tabId";
 
-chrome.action.onClicked.addListener(async (tab) => {
+async function toggleSideBySide(tab: chrome.tabs.Tab) {
   const state = getBucket<State>(String(tab.id));
   const _ = await state.get();
 
@@ -38,8 +38,10 @@ chrome.action.onClicked.addListener(async (tab) => {
     console.log(tab.id);
     console.log(_.tabId);
   }
+}
 
-
+chrome.action.onClicked.addListener(async (tab) => {
+  toggleSideBySide(tab);
 });
 
 chrome.tabs.onActivated.addListener(async (tabActiveInfo) => {
@@ -106,3 +108,15 @@ function setIconOFF() {
   });
 }
 
+chrome.commands.onCommand.addListener((command, tab) => {
+  console.log(`Command: ${command}`);
+
+  switch (command) {
+    case "toggle_side-by-side":
+      toggleSideBySide(tab);
+      break;
+    default:
+      break;
+  }
+
+});
