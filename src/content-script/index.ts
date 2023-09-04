@@ -36,8 +36,6 @@ function split() {
     // $("body").children().wrapAll("<div class='d-inline-flex'></div>")
     // $("body").children().wrapAll("<div id='side_by_side_container' class='d-flex flex-row'></div>")
     $("body").children().wrapAll("<div id='side_by_side_container' class=''></div>")
-
-    // TODO set translate=no code tag
   }
 }
 
