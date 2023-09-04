@@ -11,7 +11,7 @@ const [major, minor, patch, label = '0'] = version
   .split(/[.-]/)
 
 export default defineManifest(async (env) => ({
-  name: env.mode === 'staging' ? `[INTERNAL] ${name}` : name,
+  name: env.mode === 'staging' ? `[INTERNAL] ${name}` : "2ペイン翻訳",
   // up to four numbers separated by dots
   version: `${major}.${minor}.${patch}.${label}`,
   // semver is OK in "version_name"
@@ -52,6 +52,10 @@ export default defineManifest(async (env) => ({
       },
       "description": "Toggle \"side-by-side-translation\" on the current page."
     },
+  },
+  icons: {
+    "64": "src/assets/icon_OFF_64.png",
+    "128": "src/assets/icon_OFF_128.png",
   },
   web_accessible_resources: [
     {
