@@ -54,8 +54,8 @@ export default defineManifest(async (env) => ({
     },
   },
   icons: {
-    "64": "src/assets/icon_OFF_64.png",
-    "128": "src/assets/icon_OFF_128.png",
+    "64": "src/assets/icon_ON_64.png",
+    "128": "src/assets/icon_ON_128.png",
   },
   web_accessible_resources: [
     {
