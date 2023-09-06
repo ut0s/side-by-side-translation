@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "나란히 번역"
+  },
+  "description": {
+    "message": "이 확장 기능은 번역을 위한 추가 창을 만듭니다. 소스 페이지와 번역된 페이지를 나란히 확인할 수 있습니다."
+  },
+  "default_title": {
+    "message": "확장 기능 켜기."
+  },
+  "command_desc": {
+    "message": "현재 탭에서 확장 프로그램 상태를 전환합니다."
+  },
+  "turn_off_msg": {
+    "message": "내선 번호 끄기."
+  },
+  "turn_on_msg": {
+    "message": "내선 번호 켜기."
+  }
+}

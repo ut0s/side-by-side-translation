@@ -92,8 +92,9 @@ function setIconON() {
   // chrome.action.setBadgeBackgroundColor(
   //   { color: '#33FF33' },
   // );
+  const turn_off_msg = chrome.i18n.getMessage("turn_off_msg");
   chrome.action.setTitle({
-    title: "Trun Off Side By Side."
+    title: turn_off_msg
   })
 
   chrome.action.setIcon({
@@ -114,9 +115,9 @@ function setIconOFF() {
   // chrome.action.setBadgeBackgroundColor(
   //   { color: '#FFFFDD' },
   // );
-
+  const turn_on_msg = chrome.i18n.getMessage("turn_on_msg");
   chrome.action.setTitle({
-    title: "Trun On Side By Side."
+    title: turn_on_msg
   })
 
   chrome.action.setIcon({

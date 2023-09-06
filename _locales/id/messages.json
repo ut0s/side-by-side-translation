@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "terjemahan berdampingan"
+  },
+  "deskripsi": {
+    "message": "Ekstensi ini membuat jendela tambahan untuk terjemahan. Periksa sumber dan halaman yang diterjemahkan secara berdampingan."
+  },
+  "default_title": {
+    "message": "Nyalakan Ekstensi."
+  },
+  "command_desc": {
+    "message": "Alihkan status ekstensi pada tab saat ini."
+  },
+  "turn_off_msg": {
+    "message": "Matikan Ekstensi."
+  },
+  "turn_on_msg": {
+    "message": "Nyalakan Ekstensi."
+  }
+}

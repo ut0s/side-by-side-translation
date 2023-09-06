@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "Seite an Seite Übersetzung"
+  },
+  "description": {
+    "message": "Diese Erweiterung erstellt ein zusätzliches Fenster für die Übersetzung. Überprüfen Sie die Quelle und die übersetzte Seite nebeneinander."
+  },
+  "default_title": {
+    "message": "Erweiterung einschalten."
+  },
+  "command_desc": {
+    "message": "Schalte den Erweiterungsstatus auf der aktuellen Registerkarte ein."
+  },
+  "turn_off_msg": {
+    "message": "Erweiterung ausschalten."
+  },
+  "turn_on_msg": {
+    "message": "Erweiterung einschalten."
+  }
+}

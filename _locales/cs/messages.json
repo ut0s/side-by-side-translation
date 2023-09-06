@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "překlad vedle sebe"
+  },
+  "description": {
+    "message": "Toto rozšíření vytváří další okno pro překlad. Zkontrolujte zdrojovou a přeloženou stránku vedle sebe."
+  },
+  "default_title": {
+    "message": "Zapnout rozšíření."
+  },
+  "command_desc": {
+    "message": "Přepnout stav rozšíření na aktuální kartě."
+  },
+  "turn_off_msg": {
+    "message": "Vypnout rozšíření."
+  },
+  "turn_on_msg": {
+    "message": "Zapnout rozšíření."
+  }
+}
