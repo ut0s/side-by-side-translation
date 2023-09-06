@@ -4,25 +4,30 @@ import $ from 'jquery';
 import { State } from "../storage/state";
 import { tabId } from "../storage/tabId";
 
-console.log("inside content")
 
-const _ = setInterval(listenerFromBackground, 200);
-
-async function listenerFromBackground() {
-  //get active tab id
-  const _tabId = await tabId.get();
-
-  // check state
-  const state = getBucket<State>(String(_tabId.tabId));
-  const _state = await state.get();
-
-  _state.isEnable ? split() : resetSplit();
-
-  if (import.meta.env.DEV) {
-    console.log("TabId:\t", _tabId.tabId)
-    console.log(_state.isEnable ? "ON" : "OFF")
-  }
+if (import.meta.env.DEV) {
+  console.log("side-by-side-translation inside content")
 }
+
+chrome.runtime.onMessage.addListener(async function (message, sender, sendResponse) {
+  if (message.type === 'toggleSplit') {
+    if (import.meta.env.DEV) {
+      console.log("inside content:\t", message.data.isSplit);
+    }
+
+    // check state
+    const state = getBucket<State>(String(message.data.tabId));
+    const _state = await state.get();
+
+    _state.isEnable ? split() : resetSplit();
+
+    if (import.meta.env.DEV) {
+      console.log("TabId:\t", message.data.tabId)
+      console.log(_state.isEnable ? "ON" : "OFF")
+    }
+
+  }
+});
 
 function split() {
   if (!isSplit()) {

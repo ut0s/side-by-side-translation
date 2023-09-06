@@ -1,13 +1,9 @@
 import { getBucket } from "@extend-chrome/storage";
 import { State } from "../storage/state";
-import { tabId } from "../storage/tabId";
 
 async function toggleSideBySide(tab: chrome.tabs.Tab) {
   const state = getBucket<State>(String(tab.id));
   const _ = await state.get();
-
-  // set active tab id
-  tabId.set({ tabId: tab.id })
 
   if (_.tabId == tab.id) {
     const isEnable = _.isEnable
@@ -17,11 +13,26 @@ async function toggleSideBySide(tab: chrome.tabs.Tab) {
           isEnable: false
         });
         setIconOFF();
+        chrome.tabs.sendMessage(tab.id as number, {
+          type: 'toggleSplit',
+          data: {
+            isSplit: false,
+            tabId: tab.id,
+          },
+        });
       } else {
         state.set({
           isEnable: true
         });
         setIconON();
+        chrome.tabs.sendMessage(tab.id as number, {
+          type: 'toggleSplit',
+          data: {
+            isSplit: true,
+            tabId: tab.id,
+          },
+        });
+
       }
     }
   } else {
@@ -40,9 +51,16 @@ async function toggleSideBySide(tab: chrome.tabs.Tab) {
   }
 }
 
+// icon clicked
 chrome.action.onClicked.addListener(async (tab) => {
   toggleSideBySide(tab);
 });
+
+// tab updated
+chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+  toggleSideBySide(tab);
+});
+
 
 chrome.tabs.onActivated.addListener(async (tabActiveInfo) => {
   const state = getBucket<State>(String(tabActiveInfo.tabId));
@@ -59,6 +77,9 @@ chrome.tabs.onActivated.addListener(async (tabActiveInfo) => {
   } else {
     const isEnable = _.isEnable
     isEnable ? setIconON() : setIconOFF();
+    if (import.meta.env.DEV) {
+      console.log("inside onActivated:\t", isEnable);
+    }
   }
 });
 
