@@ -11,15 +11,16 @@ const [major, minor, patch, label = '0'] = version
   .split(/[.-]/)
 
 export default defineManifest(async (env) => ({
-  name: env.mode === 'staging' ? `[INTERNAL] ${name}` : "2ペイン翻訳",
+  name: env.mode === 'staging' ? `[INTERNAL] ${name}` : "__MSG_pkg_name__",
   // up to four numbers separated by dots
   version: `${major}.${minor}.${patch}.${label}`,
   // semver is OK in "version_name"
   version_name: version,
   manifest_version: 3,
-  description: "extention make additional pane for translation. Check source and translated side-by-side.",
+  description: "__MSG_description__",
+  default_locale: "en",
   action: {
-    default_title: 'Trun On Side By Side.',
+    default_title: "__MSG_default_title__",
     // default_popup: 'src/popup/index.html',
     "default_icon": {
       // "16": "src/assets/icon_off_16.png",
@@ -50,7 +51,7 @@ export default defineManifest(async (env) => ({
         "chromeos": "Ctrl+I",
         "linux": "Ctrl+I"
       },
-      "description": "Toggle \"side-by-side-translation\" on the current page."
+      "description": "__MSG_command_desc__"
     },
   },
   icons: {

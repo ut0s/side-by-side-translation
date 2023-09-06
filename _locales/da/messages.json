@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "Oversættelse side om side"
+  },
+  "description": {
+    "message": "Denne udvidelse opretter et ekstra vindue til oversættelse. Tjek kilden og den oversatte side side om side."
+  },
+  "default_title": {
+    "message": "Tænd for udvidelse."
+  },
+  "command_desc": {
+    "message": "Skift udvidelsesstatus på den aktuelle fane."
+  },
+  "turn_off_msg": {
+    "message": "Sluk for udvidelsen."
+  },
+  "turn_on_msg": {
+    "message": "Tænd for udvidelsen."
+  }
+}

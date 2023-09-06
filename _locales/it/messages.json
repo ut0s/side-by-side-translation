@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "traduzione fianco a fianco"
+  },
+  "description": {
+    "message": "Questa estensione crea una finestra aggiuntiva per la traduzione. Controlla la pagina sorgente e quella tradotta fianco a fianco."
+  },
+  "default_title": {
+    "message": "Attiva l'estensione."
+  },
+  "command_desc": {
+    "message": "Attiva lo stato di estensione sulla scheda corrente."
+  },
+  "turn_off_msg": {
+    "message": "Disattiva l'estensione."
+  },
+  "turn_on_msg": {
+    "message": "Attivare l'estensione."
+  }
+}

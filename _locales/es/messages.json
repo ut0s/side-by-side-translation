@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "traducción lado a lado"
+  },
+  "description": {
+    "message": "Esta extensión crea una ventana adicional para la traducción. Comprueba la página de origen y la traducida una al lado de la otra."
+  },
+  "default_title": {
+    "message": "Activar extensión."
+  },
+  "command_desc": {
+    "message": "Activar estado de extensión en la pestaña actual."
+  },
+  "turn_off_msg": {
+    "message": "Desactivar extensión."
+  },
+  "turn_on_msg": {
+    "message": "Activar extensión."
+  }
+}

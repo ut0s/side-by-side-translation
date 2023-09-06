@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "külg-külje kõrval tõlge"
+  },
+  "description": {
+    "message": "See laiendus loob täiendava akna tõlkimiseks. Kontrollida allikas ja tõlgitud lehekülg kõrvuti."
+  },
+  "default_title": {
+    "message": "Lülitage laiendus sisse."
+  },
+  "command_desc": {
+    "message": "Praeguse vahekaardi laienduse staatuse vahetamine."
+  },
+  "turn_off_msg": {
+    "message": "Lülita laiendus välja."
+  },
+  "turn_on_msg": {
+    "message": "Lülitage laiendus sisse."
+  }
+}

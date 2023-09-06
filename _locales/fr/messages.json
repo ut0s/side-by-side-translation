@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "traduction côte à côte"
+  },
+  "description": {
+    "message": "Cette extension crée une fenêtre supplémentaire pour la traduction. Vérifiez la page source et la page traduite côte à côte."
+  },
+  "default_title": {
+    "message": "Activer l'extension."
+  },
+  "command_desc": {
+    "message": "Basculer le statut de l'extension sur l'onglet en cours."
+  },
+  "turn_off_msg": {
+    "message": "Désactiver l'extension."
+  },
+  "turn_on_msg": {
+    "message": "Activer l'extension."
+  }
+}

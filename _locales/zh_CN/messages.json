@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "并排翻译"
+  },
+  "description": {
+    "message": "此扩展为翻译创建了一个额外窗口 并排检查源页面和翻译页面"
+  },
+  "default_title": {
+    "message": "打开扩展"
+  },
+  "command_desc": {
+    "message": "切换当前标签页的扩展状态"
+  },
+  "turn_off_msg": {
+    "message": "关闭扩展"
+  },
+  "turn_on_msg": {
+    "message": "开启扩展功能"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "side by side translation"
+  },
+  "description": {
+    "message": "This extension creates an additional window for translation. Check source and translated page side by side."
+  },
+  "default_title": {
+    "message": "Turn On Side By Side Extension."
+  },
+  "command_desc": {
+    "message": "Toggle extension status on the current tab."
+  },
+  "turn_off_msg": {
+    "message": "Turn Off Side By Side Extension."
+  },
+  "turn_on_msg": {
+    "message": "Turn On Side By Side Extension."
+  }
+}

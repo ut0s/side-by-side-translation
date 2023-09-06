@@ -1,0 +1,20 @@
+{
+  "pkg_name": {
+    "message": "2ペイン翻訳"
+  },
+  "description": {
+    "message": "この拡張機能は、翻訳用の追加ウィンドウを作成します。ソースページと翻訳ページを並べてチェックできます。"
+  },
+  "default_title": {
+    "message": "拡張機能をONにする"
+  },
+  "command_desc": {
+    "message": "現在のタブの拡張ステータスを切り替える。"
+  },
+  "turn_off_msg": {
+    "message": "拡張機能をOFFにする"
+  },
+  "turn_on_msg": {
+    "message": "拡張機能をONにする"
+  }
+}
