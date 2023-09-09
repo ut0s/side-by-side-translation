@@ -1,53 +1,13 @@
-import { getBucket } from "@extend-chrome/storage";
-import { State } from "../storage/state";
-
 async function toggleSideBySide(tab: chrome.tabs.Tab) {
-  const state = getBucket<State>(String(tab.id));
-  const _ = await state.get();
-
-  if (_.tabId == tab.id) {
-    const isEnable = _.isEnable
-    if (typeof (isEnable) == "boolean") {
-      if (isEnable) {
-        state.set({
-          isEnable: false
-        });
-        setIconOFF();
-        chrome.tabs.sendMessage(tab.id as number, {
-          type: 'toggleSplit',
-          data: {
-            isSplit: false,
-            tabId: tab.id,
-          },
-        });
-      } else {
-        state.set({
-          isEnable: true
-        });
-        setIconON();
-        chrome.tabs.sendMessage(tab.id as number, {
-          type: 'toggleSplit',
-          data: {
-            isSplit: true,
-            tabId: tab.id,
-          },
-        });
-
-      }
-    }
-  } else {
-    // initialize
-    console.log("typeof:", typeof (_.isEnable));
-    state.set({
+  chrome.tabs.sendMessage(tab.id as number, {
+    type: 'toggleSplit',
+    data: {
       tabId: tab.id,
-      isEnable: true
-    });
-    setIconON();
-  }
+    },
+  });
 
   if (import.meta.env.DEV) {
     console.log(tab.id);
-    console.log(_.tabId);
   }
 }
 
@@ -57,33 +17,37 @@ chrome.action.onClicked.addListener(async (tab) => {
 });
 
 // tab updated
-chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
-  toggleSideBySide(tab);
-});
+// chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+//   toggleSideBySide(tab);
+// });
 
+// shortcut command
+chrome.commands.onCommand.addListener((command, tab) => {
+  switch (command) {
+    case "toggle_side-by-side":
+      toggleSideBySide(tab);
+      break;
+    default:
+      break;
+  }
 
-chrome.tabs.onActivated.addListener(async (tabActiveInfo) => {
-  const state = getBucket<State>(String(tabActiveInfo.tabId));
-  const _ = await state.get();
-
-  if (_.tabId != tabActiveInfo.tabId) {
-    // initialize
-    // default off
-    state.set({
-      tabId: tabActiveInfo.tabId,
-      isEnable: false
-    });
-    setIconOFF();
-  } else {
-    const isEnable = _.isEnable
-    isEnable ? setIconON() : setIconOFF();
-    if (import.meta.env.DEV) {
-      console.log("inside onActivated:\t", isEnable);
-    }
+  if (import.meta.env.DEV) {
+    console.log(`Command: ${command}`);
   }
 });
 
+chrome.runtime.onMessage.addListener(async function (message, sender, sendResponse) {
+  if (message.type === 'setIconState') {
 
+    message.data.isSplit ? setIconON() : setIconOFF();
+
+    if (import.meta.env.DEV) {
+      console.log("msg Type:\t", message.type)
+      console.log("TabId:\t", message.data.tabId)
+      console.log("isSplit:\t", message.data.isSplit)
+    }
+  }
+});
 
 function setIconON() {
   // chrome.action.setBadgeText(
@@ -130,15 +94,3 @@ function setIconOFF() {
   });
 }
 
-chrome.commands.onCommand.addListener((command, tab) => {
-  console.log(`Command: ${command}`);
-
-  switch (command) {
-    case "toggle_side-by-side":
-      toggleSideBySide(tab);
-      break;
-    default:
-      break;
-  }
-
-});
