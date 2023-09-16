@@ -1,20 +1,7 @@
-// .pane {
-//   min-width: 0;
-//   max-width: 100%;
-// }
-
 #side_by_side_container{
   display: grid;
   // grid-template-columns: 49% 49%;
   grid-auto-columns: 49.5%;
   grid-auto-flow: column;
-  column-gap: 10px;
+  column-gap: 1%;
 }
-
-// #side_by_side_src{
-//   width: 50%;
-// }
-
-// #side_by_side_dst{
-//   width: 50%;
-// }
