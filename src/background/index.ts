@@ -1,3 +1,14 @@
+// create context
+chrome.runtime.onInstalled.addListener(function (details) {
+  // create context menu
+  const command_desc_msg = chrome.i18n.getMessage("command_desc");
+  chrome.contextMenus.create({
+    id: "menu_toggle_side-by-side",
+    title: command_desc_msg,
+    contexts: ["all"],
+  });
+});
+
 async function toggleSideBySide(tab: chrome.tabs.Tab) {
   chrome.tabs.sendMessage(tab.id as number, {
     type: 'toggleSplit',
@@ -14,6 +25,17 @@ async function toggleSideBySide(tab: chrome.tabs.Tab) {
 // icon clicked
 chrome.action.onClicked.addListener(async (tab) => {
   toggleSideBySide(tab);
+});
+
+// context menu clicked
+chrome.contextMenus.onClicked.addListener(async (info, tab) => {
+  if (info.menuItemId === 'menu_toggle_side-by-side') {
+    if (import.meta.env.DEV) {
+      console.log("context menu clicked from ", tab.id);
+    }
+    toggleSideBySide(tab);
+  }
+
 });
 
 // shortcut command

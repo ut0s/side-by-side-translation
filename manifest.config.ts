@@ -42,7 +42,7 @@ export default defineManifest(async (env) => ({
   ],
   host_permissions: ['*://*/*'],
   // options_page: 'src/options/index.html',
-  permissions: ['storage'],
+  permissions: ['storage', 'contextMenus'],
   commands: {
     "toggle_side-by-side": {
       "suggested_key": {

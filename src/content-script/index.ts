@@ -52,6 +52,6 @@ function isSplit() {
   if (import.meta.env.DEV) {
     console.log("Lenght:\t", $("#side_by_side_container").length)
   }
-  return $("#side_by_side_container").length == 1;
+  return $("#side_by_side_container").length === 1;
 }
 
