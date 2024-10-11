@@ -58,18 +58,4 @@ export default defineManifest(async (env) => ({
     "64": "src/assets/icon_ON_64.png",
     "128": "src/assets/icon_ON_128.png",
   },
-  web_accessible_resources: [
-    {
-      matches: ['*://*/*'],
-      resources: ['src/content-script/index.ts'],
-    },
-    {
-      matches: ['*://*/*'],
-      resources: ['src/assets/icon_ON_64.png', 'src/assets/icon_ON_128.png'],
-    },
-    // {
-    //   matches: ['*://*/*'],
-    //   resources: ['src/content-script/iframe/index.html'],
-    // },
-  ],
 }))
