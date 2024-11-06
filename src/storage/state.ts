@@ -1,4 +1,4 @@
 export interface State {
-  tabId: number;
-  isEnable: boolean;
+  tabId: number
+  isEnable: boolean
 }
